@@ -17,7 +17,7 @@
   document.title = `${p.name} - Homepage`;
   const contact = (key, name, url) => safeUrl(url) ? `<li>${icon(key)}${external(url,name)}</li>` : "";
   document.getElementById("profile").innerHTML = `
-    <img class="avatar" src="${esc(p.avatar)}" alt="${esc(p.name)} initials avatar" width="174" height="174">
+    <img class="avatar" src="${esc(p.avatar)}" alt="${esc(p.name)} avatar" width="174" height="174">
     <h1>${esc(p.name)}</h1><p class="affiliation">${esc(p.affiliation)}</p><p class="role">${esc(p.role)}</p>
     <details class="mobile-links" open><summary>Contact & Links</summary><ul class="profile-links">
       <li>${icon("pin")}<span>${esc(p.location)}</span></li>

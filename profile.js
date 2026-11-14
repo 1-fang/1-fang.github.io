@@ -4,7 +4,7 @@ window.PROFILE = {
   "affiliation": "Hefei University of Technology",
   "role": "Bachelor’s degree, 2025\nPhD Applicant",
   "location": "Shenzhen, China",
-  "avatar": "assets/avatar.svg",
+  "avatar": "assets/avatar.jpg",
   "email": "2976741641fxy@gmail.com",
   "github": "https://github.com/1-fang",
   "about": [
