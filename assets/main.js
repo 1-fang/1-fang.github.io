@@ -34,15 +34,14 @@
     ${p.publications.filter(item => item.group === group).map(item => {
       const figure = `<img class="pub-image${item.imagePending ? " pending-figure" : ""}" src="${esc(item.image)}" alt="${esc(item.imageAlt)}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async">`;
       const links = [["Paper",item.paper],["Code",item.code],["Project",item.project]].filter(([,url]) => safeUrl(url));
-      const layout = item.description ? "publication--summary" : "publication--compact";
-      const wide = item.imageWidth / item.imageHeight >= 2.7 ? " publication--wide" : "";
-      return `<article class="publication ${layout}${wide}" id="${esc(item.slug)}">
-        <div class="publication-visual">${figure}</div>
+      const venueBadge = item.status === "Under Review" ? "Under Review" : item.venue.startsWith("Pattern Recognition Letters") ? "PRL 2026" : item.venue.replace(" (Main Conference)", "");
+      return `<article class="publication" id="${esc(item.slug)}">
+        <div class="publication-visual"><div class="figure-frame"><span class="venue-badge">${esc(venueBadge)}</span>${figure}</div></div>
         <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors,item.correspondingAuthors)}</p>
-        <div class="pub-meta"><p class="venue">${esc(item.venue)} <span class="publication-status ${item.status === "Under Review" ? "under-review" : "accepted"}">${esc(item.status)}</span></p>
+        ${item.correspondingAuthors?.length ? '<p class="author-note">† Corresponding author</p>' : ""}
+        <p class="venue">${esc(item.venue)}${item.status === "Under Review" ? "" : ` · ${esc(item.status)}`}</p>
         ${links.length ? `<div class="pub-links">${links.map(([label,url]) => external(url,label)).join("")}</div>` : ""}
-        ${item.correspondingAuthors?.length ? '<p class="author-note">† Corresponding author</p>' : ""}</div>
-        ${item.description ? `<p class="pub-desc">${esc(item.description)}</p>` : ""}</div></article>`;
+        </div></article>`;
     }).join("")}</div>`).join("");
   document.getElementById("service-list").innerHTML = p.service.map(item => `<li><strong>${esc(item.category)}:</strong> ${esc(item.text)}</li>`).join("");
   document.getElementById("experience-list").innerHTML = timeline(p.experience);

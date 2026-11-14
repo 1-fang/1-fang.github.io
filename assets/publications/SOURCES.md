@@ -20,3 +20,5 @@ Descriptions for SemBid, PhysicsMind, and GIFT are paraphrased from their public
 ## EBA (PRL)
 
 Added after Dual-Timescale in First-Author Publications at the owner's request. Publisher metadata: https://www.sciencedirect.com/science/article/abs/pii/S0167865526003491 ; DOI: https://doi.org/10.1016/j.patrec.2026.09.032 . Pattern Recognition Letters, volume 210, pages 63–68, 2026. The five-author order follows the publisher record. The owner's corresponding-author role is explicitly confirmed by the owner; it is displayed as †, without inventing equal-contribution marks. The description is paraphrased from the publisher's public abstract. The owner subsequently supplied `framework.pdf`; its complete first page is rendered at 2600 × 840 pixels and losslessly encoded as `eba-method.webp`, replacing the placeholder. The image is displayed inline without a link. No code or project URL is invented.
+
+At the owner’s request, summaries are retained only in the configuration and are not displayed. Publication rows use the reference homepage’s Trebuchet MS / Helvetica typography and fixed 40/60 image/text layout.
