@@ -1,28 +1,40 @@
-// 个人资料和论文内容集中在这里修改。论文来自用户提供的清单；其余栏目仍为占位。
-// link/url 留空时不会生成可点击的外部链接；填写完整 https:// 地址即可启用。
+// Personal information supplied by the owner; publication metadata and order preserved.
 window.PROFILE = {
-  name: "Xinyu Fang",
-  affiliation: "你的学校 / 机构",
-  role: "你的身份 / 研究方向",
-  location: "你的城市",
-  avatar: "assets/avatar.svg",
-  email: "", // 例如 name@example.com
-  github: "https://github.com/1-fang",
-  scholar: "",
-  linkedin: "",
-  about: [
-    "你好，我是 Xinyu Fang。这里是一段个人简介，之后可以填写你的学校、专业、研究方向或目前正在做的事情。",
-    "在这里介绍你的学习经历、感兴趣的领域，以及希望分享的工作。你可以按需要增减段落，让这个主页成为自己的介绍。",
-    "我的兴趣包括：［方向一］、［方向二］和［方向三］。下方展示我的论文；个人简介、学术服务和经历仍待补充。"
+  "name": "Xinyu Fang",
+  "affiliation": "Hefei University of Technology",
+  "role": "Bachelor’s degree, 2025\nPhD Applicant",
+  "location": "Shenzhen, China",
+  "avatar": "assets/avatar.svg",
+  "email": "2976741641fxy@gmail.com",
+  "github": "https://github.com/1-fang",
+  "about": [
+    "I received my bachelor’s degree from Hefei University of Technology in 2025. In 2024, I was an invited exchange student at National Tsing Hua University in Taiwan.",
+    [
+      "Since graduating, I have worked as a research assistant at the University of Science and Technology of China (USTC) and City University of Hong Kong (CityUHK). I am fortunate to work with ",
+      {
+        "text": "Youhua Li",
+        "url": "https://youhua97.github.io/"
+      },
+      "."
+    ],
+    "My research explores how large language models can support learning and decision-making in complex environments. I began with LLM-based code generation, where I developed hands-on experience in reinforcement learning and model training. I subsequently extended this interest to operational decision-making, studying language-guided, hierarchical reinforcement learning for ride-hailing dispatching and repositioning.",
+    "I am particularly interested in the intersection of large language models, reinforcement learning, and information systems: how semantic knowledge and high-level objectives can be translated into adaptive, executable policies for real-world decision problems."
   ],
-  announcement: "这里可以放一条置顶消息，例如：欢迎交流与合作。",
-  news: [
-    { date: "YYYY.MM", text: "在这里填写最近的一条动态。" },
-    { date: "YYYY.MM", text: "在这里填写项目发布、论文进展或学习记录。" },
-    { date: "YYYY.MM", text: "在这里填写一项值得分享的新进展。" }
+  "announcement": "I am preparing to apply for PhD programs in Information Systems.",
+  "news": [
+    {
+      "date": "2026.11",
+      "text": [
+        "Our paper ",
+        {
+          "text": "TriConList",
+          "url": "#triconlist"
+        },
+        " has been accepted to the main conference of EACL 2027!"
+      ]
+    }
   ],
-  // 录用年份：EACL 2027 主会、WSDM 2027 Findings，用户于 2026-11-14 确认。
-  publications: [
+  "publications": [
     {
       "slug": "triconlist",
       "title": "TriConList: Learning Tri-tier Contract Consistency for Full-Stack Repository Generation",
@@ -237,12 +249,29 @@ window.PROFILE = {
       "project": "https://veclynxlab.github.io/W3-NewsAlpha-page/"
     }
   ],
-  service: [
-    { category: "Conferences", text: "［审稿过的会议名称］，［年份］" },
-    { category: "Journals", text: "［审稿过的期刊名称］，［年份］" }
+  "service": [
+    {
+      "category": "Reviewer",
+      "text": "CVPR, ICLR, WSDM, ICASSP, and CIKM."
+    }
   ],
-  experience: [
-    { date: "YYYY — Present", text: "学校 / 机构名称，专业或职位。" },
-    { date: "YYYY — YYYY", text: "此前的学习、工作或实习经历。" }
+  "experience": [
+    {
+      "date": "Since 2025",
+      "text": "Research assistant experience at the University of Science and Technology of China and City University of Hong Kong."
+    },
+    {
+      "date": "2025",
+      "text": "Bachelor’s degree, Hefei University of Technology."
+    },
+    {
+      "date": "2024",
+      "text": "Invited Exchange Student, National Tsing Hua University, Taiwan."
+    }
+  ],
+  "researchInterests": [
+    "LLM-Guided Decision-Making and Optimization",
+    "Reinforcement Learning",
+    "AI for Information Systems and Operations"
   ]
 };

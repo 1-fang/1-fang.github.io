@@ -33,3 +33,6 @@
   .figure-frame { width: 100%; max-width: 400px; }
   .pub-image { max-width: 400px; }
 }
+
+/* Profile and introduction follow the reference homepage typography. */
+.role{white-space:pre-line}.about p{line-height:1.5;margin-bottom:10px}.about a{text-decoration:underline}.research-interests{margin-top:12px!important}
