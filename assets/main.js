@@ -21,13 +21,23 @@
       <li>${icon("mail")}${p.email ? `<a href="mailto:${esc(p.email)}">Email</a>` : '<span class="placeholder-contact">Email · 待填写</span>'}</li>
       ${contact("github","GitHub",p.github)}${contact("scholar","Google Scholar",p.scholar)}${contact("link","LinkedIn",p.linkedin)}
     </ul></details>`;
-  document.getElementById("about-me").innerHTML = p.about.map(t => `<p>${esc(t)}</p>`).join("") + (p.announcement ? `<p class="announcement">${esc(p.announcement)}</p>` : "") + '<p class="template-note">模板预览 · 除姓名和 GitHub 链接外，以下内容均为占位。</p>';
+  document.getElementById("about-me").innerHTML = p.about.map(t => `<p>${esc(t)}</p>`).join("") + (p.announcement ? `<p class="announcement">${esc(p.announcement)}</p>` : "") + '<p class="template-note">个人简介、联系方式、动态、学术服务与经历暂为占位。</p>';
   const timeline = items => items.map(i => `<li><span class="date">${esc(i.date)}</span>${esc(i.text)}</li>`).join("");
   document.getElementById("news-list").innerHTML = timeline(p.news);
-  document.getElementById("publication-list").innerHTML = p.publications.map(item => `<article class="publication">
-    <img class="pub-image" src="${esc(item.image)}" alt="论文配图占位" width="370" height="200" loading="lazy">
-    <div><h3 class="pub-title">${external(item.paper || item.project,item.title)}</h3><p class="authors">${esc(item.authors)}</p><p class="venue">${esc(item.venue)}</p>
-    <div class="pub-links">${[["Paper",item.paper],["Code",item.code],["Project",item.project]].map(([label,url]) => url ? external(url,label) : `<span class="pending-link" title="${label} 链接待填写">${label}</span>`).join("")}</div><p class="pub-desc">${esc(item.description)}</p></div></article>`).join("");
+  const authors = names => names.map(name => name === p.name ? `<strong>${esc(name)}</strong>` : esc(name)).join(", ");
+  const groups = [...new Set(p.publications.map(item => item.group))];
+  document.getElementById("publication-list").innerHTML = groups.map(group => `
+    <div class="publication-group"><h3 class="publication-group-title">${esc(group)}</h3>
+    ${p.publications.filter(item => item.group === group).map(item => {
+      const figure = `<img class="pub-image${item.imagePending ? " pending-figure" : ""}" src="${esc(item.image)}" alt="${esc(item.imageAlt)}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async">`;
+      const links = [["Paper",item.paper],["Code",item.code],["Project",item.project]].filter(([,url]) => safeUrl(url));
+      return `<article class="publication" id="${esc(item.slug)}">
+        <div class="publication-visual">${item.imagePending ? figure : `<a class="figure-link" href="${esc(item.image)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(`View full-size figure: ${item.title}`)}">${figure}</a>`}</div>
+        <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors)}</p>
+        <p class="venue">${esc(item.venue)} <span class="publication-status ${item.status === "Accepted" ? "accepted" : "under-review"}">${esc(item.status)}</span></p>
+        ${links.length ? `<div class="pub-links">${links.map(([label,url]) => external(url,label)).join("")}</div>` : ""}
+        ${item.description ? `<p class="pub-desc">${esc(item.description)}</p>` : ""}</div></article>`;
+    }).join("")}</div>`).join("");
   document.getElementById("service-list").innerHTML = p.service.map(item => `<li><strong>${esc(item.category)}:</strong> ${esc(item.text)}</li>`).join("");
   document.getElementById("experience-list").innerHTML = timeline(p.experience);
   document.getElementById("footer-name").textContent = p.name;

@@ -2,7 +2,7 @@
 
 参考 https://hatchetproject.github.io/ 的布局制作的独立静态主页模板。没有使用参考作者的照片、论文、个人经历或源代码。
 
-除姓名和 GitHub 链接外，当前页面内容均为占位。网页无需安装依赖，可直接托管于 GitHub Pages。
+已按用户提供的清单录入 9 篇真实论文；个人简介、联系方式、动态、学术服务与经历仍为占位。网页无需安装依赖，可直接托管于 GitHub Pages。
 
 ## 修改内容
 
@@ -10,7 +10,9 @@
 - `service` 栏目用于填写审稿服务，按 Conferences 和 Journals 列出会议、期刊名称及年份。
 - 更换头像：用自己的图片替换 `assets/avatar.svg`，或更改 `profile.js` 的 `avatar` 路径。
 - 更换论文配图：更改每篇论文的 `image` 路径。
-- 填写完整的 `https://` 链接即可启用论文、代码、项目等链接，留空则显示占位标签。
+- 论文真实配图保存在 `assets/publications/`，来源记录见其中的 `SOURCES.md`。`imagePending: true` 表示尚缺方法图；补图后将其设为 `false`，即可点击查看完整图片。
+- 论文按数组顺序和 `group` 分组，完整作者填写为数组，只有与个人姓名完全一致的作者会加粗。
+- 填写完整的 `https://` 链接即可启用论文、代码、项目等链接，留空则不显示按钮。
 - 不需要的列表可以设为空数组；如需完全隐藏栏目，可删除 `index.html` 中对应的 section 和导航，并移除 `main.js` 中对应的渲染行。
 - 修改页面颜色、字号、宽度和布局：编辑 `assets/style.css`。
 - 正式使用时，可删除 `assets/main.js` 中的「模板预览」提示，并更新 `index.html` 的 description。
