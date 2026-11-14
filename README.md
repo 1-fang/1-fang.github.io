@@ -10,7 +10,7 @@
 - `service` 栏目用于填写审稿服务，按 Conferences 和 Journals 列出会议、期刊名称及年份。
 - 更换头像：用自己的图片替换 `assets/avatar.svg`，或更改 `profile.js` 的 `avatar` 路径。
 - 更换论文配图：更改每篇论文的 `image` 路径。
-- 论文真实配图保存在 `assets/publications/`，来源记录见其中的 `SOURCES.md`。`imagePending: true` 表示尚缺方法图；补图后将其设为 `false`，即可点击查看完整图片。
+- 论文真实配图保存在 `assets/publications/`，来源记录见其中的 `SOURCES.md`。图片直接在页面完整展示，不设置点击操作。`imagePending: true` 表示尚缺方法图，补图后将其设为 `false`。
 - 论文按数组顺序和 `group` 分组，完整作者填写为数组，只有与个人姓名完全一致的作者会加粗。
 - 填写完整的 `https://` 链接即可启用论文、代码、项目等链接，留空则不显示按钮。
 - 不需要的列表可以设为空数组；如需完全隐藏栏目，可删除 `index.html` 中对应的 section 和导航，并移除 `main.js` 中对应的渲染行。

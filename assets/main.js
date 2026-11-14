@@ -32,7 +32,7 @@
       const figure = `<img class="pub-image${item.imagePending ? " pending-figure" : ""}" src="${esc(item.image)}" alt="${esc(item.imageAlt)}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async">`;
       const links = [["Paper",item.paper],["Code",item.code],["Project",item.project]].filter(([,url]) => safeUrl(url));
       return `<article class="publication" id="${esc(item.slug)}">
-        <div class="publication-visual">${item.imagePending ? figure : `<a class="figure-link" href="${esc(item.image)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(`View full-size figure: ${item.title}`)}">${figure}</a>`}</div>
+        <div class="publication-visual">${figure}</div>
         <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors)}</p>
         <p class="venue">${esc(item.venue)} <span class="publication-status ${item.status === "Accepted" ? "accepted" : "under-review"}">${esc(item.status)}</span></p>
         ${links.length ? `<div class="pub-links">${links.map(([label,url]) => external(url,label)).join("")}</div>` : ""}
