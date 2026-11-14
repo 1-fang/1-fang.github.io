@@ -82,6 +82,32 @@ window.PROFILE = {
       "project": ""
     },
     {
+      "slug": "eba-transferable-adversarial-attack",
+      "title": "Transferable Adversarial Attack via Energy-Based Model",
+      "authors": [
+        "Xinyu Fang",
+        "Zhenyu Liang",
+        "Xiulong Yang",
+        "Yunfeng Diao",
+        "Xuyang Zhong"
+      ],
+      "correspondingAuthors": [
+        "Xinyu Fang"
+      ],
+      "venue": "Pattern Recognition Letters (PRL), Vol. 210, pp. 63–68, 2026",
+      "status": "Published",
+      "group": "First-Author Publications",
+      "description": "Transfer-based attacks can overfit a surrogate model’s decision boundary. EBA uses an energy-based model to perturb inputs through gradients of the data distribution, moving adversarial examples away from high-density regions. Experiments evaluate transferability across CNN and Vision Transformer models on CIFAR-10 and CIFAR-100.",
+      "image": "assets/publications/method-pending.svg",
+      "imageWidth": 900,
+      "imageHeight": 500,
+      "imagePending": true,
+      "imageAlt": "EBA — method figure pending",
+      "paper": "https://doi.org/10.1016/j.patrec.2026.09.032",
+      "code": "",
+      "project": ""
+    },
+    {
       "slug": "language-representations-auto-bidding",
       "title": "On the Role of Language Representations in Auto-Bidding: Findings and Implications",
       "authors": [

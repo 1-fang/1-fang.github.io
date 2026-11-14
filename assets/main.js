@@ -24,7 +24,10 @@
   document.getElementById("about-me").innerHTML = p.about.map(t => `<p>${esc(t)}</p>`).join("") + (p.announcement ? `<p class="announcement">${esc(p.announcement)}</p>` : "") + '<p class="template-note">个人简介、联系方式、动态、学术服务与经历暂为占位。</p>';
   const timeline = items => items.map(i => `<li><span class="date">${esc(i.date)}</span>${esc(i.text)}</li>`).join("");
   document.getElementById("news-list").innerHTML = timeline(p.news);
-  const authors = names => names.map(name => name === p.name ? `<strong>${esc(name)}</strong>` : esc(name)).join(", ");
+  const authors = (names, corresponding = []) => names.map(name => {
+    const label = name === p.name ? `<strong>${esc(name)}</strong>` : esc(name);
+    return label + (corresponding.includes(name) ? '<sup class="corresponding-mark" title="Corresponding author">†</sup>' : "");
+  }).join(", ");
   const groups = [...new Set(p.publications.map(item => item.group))];
   document.getElementById("publication-list").innerHTML = groups.map(group => `
     <div class="publication-group"><h3 class="publication-group-title">${esc(group)}</h3>
@@ -33,8 +36,9 @@
       const links = [["Paper",item.paper],["Code",item.code],["Project",item.project]].filter(([,url]) => safeUrl(url));
       return `<article class="publication" id="${esc(item.slug)}">
         <div class="publication-visual">${figure}</div>
-        <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors)}</p>
-        <p class="venue">${esc(item.venue)} <span class="publication-status ${item.status === "Accepted" ? "accepted" : "under-review"}">${esc(item.status)}</span></p>
+        <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors,item.correspondingAuthors)}</p>
+        ${item.correspondingAuthors?.length ? '<p class="author-note">† Corresponding author</p>' : ""}
+        <p class="venue">${esc(item.venue)} <span class="publication-status ${item.status === "Under Review" ? "under-review" : "accepted"}">${esc(item.status)}</span></p>
         ${links.length ? `<div class="pub-links">${links.map(([label,url]) => external(url,label)).join("")}</div>` : ""}
         ${item.description ? `<p class="pub-desc">${esc(item.description)}</p>` : ""}</div></article>`;
     }).join("")}</div>`).join("");
