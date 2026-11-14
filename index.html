@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xinyu Fang 的个人主页。关于我、最新动态、论文与项目。">
+  <meta name="color-scheme" content="light">
+  <title>Xinyu Fang - Homepage</title>
+  <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="profile.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#about-me">跳到正文</a>
+  <header class="masthead">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#about-me">Homepage</a>
+      <div class="nav-links">
+        <a href="#about-me">About Me</a><a href="#news">News</a>
+        <a href="#publications">Publications</a><a href="#projects">Projects</a>
+        <a href="#talks">Talks</a><a href="#teaching">Teaching</a><a href="#experience">Experience</a>
+      </div>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="个人资料" id="profile"></aside>
+    <main id="content">
+      <section id="about-me" class="about" aria-label="About Me"></section>
+      <section id="news"><h2><span aria-hidden="true">🔥</span> News</h2><ul class="news-list" id="news-list"></ul></section>
+      <section id="publications"><h2><span aria-hidden="true">📝</span> Selected Publications</h2><div id="publication-list"></div></section>
+      <section id="projects"><h2><span aria-hidden="true">💻</span> Selected Projects</h2><div class="project-grid" id="project-list"></div></section>
+      <section id="talks"><h2><span aria-hidden="true">💬</span> Talks</h2><ul class="simple-list" id="talk-list"></ul></section>
+      <section id="teaching"><h2><span aria-hidden="true">📚</span> Teaching</h2><ul class="simple-list" id="teaching-list"></ul></section>
+      <section id="experience"><h2><span aria-hidden="true">🎓</span> Experience</h2><ul class="simple-list" id="experience-list"></ul></section>
+      <footer><span id="footer-name"></span> · <a href="https://github.com/1-fang">GitHub</a><span class="footer-note">Personal Homepage</span></footer>
+    </main>
+  </div>
+  <a class="back-top" href="#about-me" aria-label="回到顶部" title="回到顶部">↑</a>
+  <noscript><p class="noscript">请启用 JavaScript 以查看主页内容。</p></noscript>
+</body>
+</html>

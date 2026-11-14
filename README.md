@@ -1,0 +1,36 @@
+# Xinyu Fang · Personal Homepage
+
+参考 https://hatchetproject.github.io/ 的布局制作的独立静态主页模板。没有使用参考作者的照片、论文、个人经历或源代码。
+
+除姓名和 GitHub 链接外，当前页面内容均为占位。网页无需安装依赖，可直接托管于 GitHub Pages。
+
+## 修改内容
+
+- 编辑 `profile.js`：姓名、简介、联系方式、动态、论文、项目与经历都在同一个文件里。
+- 更换头像：用自己的图片替换 `assets/avatar.svg`，或更改 `profile.js` 的 `avatar` 路径。
+- 更换论文配图：更改每篇论文的 `image` 路径。
+- 填写完整的 `https://` 链接即可启用论文、代码、项目等链接，留空则显示占位标签。
+- 不需要的列表可以设为空数组；如需完全隐藏栏目，可删除 `index.html` 中对应的 section 和导航，并移除 `main.js` 中对应的渲染行。
+- 修改页面颜色、字号、宽度和布局：编辑 `assets/style.css`。
+- 正式使用时，可删除 `assets/main.js` 中的「模板预览」提示，并更新 `index.html` 的 description。
+
+## 本地查看
+
+在此目录运行 `python3 -m http.server 8000`，浏览器打开 http://localhost:8000。
+
+## GitHub Pages
+
+将这些文件放在 `1-fang/1-fang.github.io` 仓库的 main 分支根目录。
+在仓库 Settings → Pages 中选择 Deploy from a branch → main → / (root)。
+发布后地址：https://1-fang.github.io/
+
+## 文件结构
+
+```
+index.html        页面结构
+profile.js        个人内容配置
+assets/main.js    内容渲染和导航
+assets/style.css  桌面及手机样式
+assets/*.svg      原创占位图
+.nojekyll         让 GitHub Pages 直接提供静态文件
+```
