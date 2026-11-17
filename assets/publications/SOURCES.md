@@ -23,8 +23,8 @@ Added after Dual-Timescale in First-Author Publications at the owner's request. 
 
 At the owner’s request, summaries are retained only in the configuration and are not displayed. Publication rows use the reference homepage’s Trebuchet MS / Helvetica typography and fixed 40/60 image/text layout.
 
-## Featured assortment working paper (2026-11-17)
+## Assortment working paper (2026-11-17)
 
 `assortment-method.webp` is the complete first slide of the owner-supplied `offline_online_flow_editable.pptx`, rendered with LibreOffice and Poppler at 3000 pixels wide, then losslessly encoded as WebP. No diagram content is cropped or redrawn. Only the figure is published; the original deck and private notes are not hosted. The owner explicitly requested this figure on the homepage.
 
-The separate Featured Research section uses “Assortment Optimization” as a topic label pending the formal paper title. The owner confirmed that the study is complete and is being prepared for submission to a UTD-listed journal, not yet under review. Author order: Youhua Li, Xinyu Fang, Yiqi Sun, Pengfei Guo, Zuojun (Max) Shen, Houmin Yan. The short narrative is paraphrased from the supplied method diagram, without empirical performance claims or an invented journal destination.
+The separate Working Papers publication group, between First-Author Publications and Other Accepted Publications, uses “Assortment Optimization” as a topic label pending the formal paper title. The owner confirmed that the study is complete and is being prepared for submission to a UTD-listed journal, not yet under review. Author order: Youhua Li, Xinyu Fang, Yiqi Sun, Pengfei Guo, Zuojun (Max) Shen, Houmin Yan. The working paper uses the same publication-row renderer as the other papers, without a visible narrative or empirical performance claims. The original introduction and top-level layout are restored.

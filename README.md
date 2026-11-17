@@ -4,7 +4,7 @@
 
 按用户提供的清单和后续修改保留 7 篇真实论文，7 篇均已配备真实主图；个人简介、联系方式、动态、学术服务与经历已按用户提供的信息填写。网页无需安装依赖，可直接托管于 GitHub Pages。
 
-2026-11-17：在 News 与 Publications 之间增加 Featured Research，单独展示已完成、准备向 UTD 收录期刊投稿的 assortment 工作。`featuredResearch` 中可编辑故事、作者和方法图；“Assortment Optimization”是研究主题标签，正式论文标题尚未提供。作者顺序按本人确认，未标注共同一作或通讯作者。方法图从本人提供的单页 PPTX 完整导出，正文介绍仅依据该图，不包含未提供的实验结果。原有 7 篇论文及其排版保持不变。
+2026-11-17：assortment 工作以 Working Papers 独立分组放在 PRL 一作论文之后、Other Accepted Publications 之前，使用与其他论文一致的 40/60 图文排版，不展示故事段落。状态为研究已完成、准备向 UTD 收录期刊投稿；“Assortment Optimization”暂作主题名。作者顺序和主图来自本人提供的材料。简介和顶部布局已恢复。
 
 ## 修改内容
 

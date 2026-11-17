@@ -31,30 +31,13 @@
     const label = name === p.name ? `<strong>${esc(name)}</strong>` : esc(name);
     return label + (corresponding.includes(name) ? '<sup class="corresponding-mark" title="Corresponding author">†</sup>' : "");
   }).join(", ");
-  const featured = p.featuredResearch;
-  if (featured) {
-    document.getElementById("featured-research-content").innerHTML = `
-      <article class="featured-work" id="${esc(featured.slug)}">
-        <p class="work-type">${esc(featured.type)}</p>
-        <h3 class="work-title">${esc(featured.title)}</h3>
-        <p class="authors">${authors(featured.authors)}</p>
-        <p class="work-status">${esc(featured.status)}</p>
-        <div class="work-story">${featured.story.map(paragraph => `<p>${esc(paragraph)}</p>`).join("")}</div>
-        <figure class="work-figure"><img src="${esc(featured.image)}" alt="${esc(featured.imageAlt)}" width="${featured.imageWidth}" height="${featured.imageHeight}" decoding="async">
-          <figcaption>Method overview: offline program synthesis and policy learning; online sequential assortment decisions.</figcaption>
-        </figure>
-      </article>`;
-  } else {
-    document.getElementById("featured-research").hidden = true;
-    document.querySelector('.nav-links a[href="#featured-research"]').hidden = true;
-  }
   const groups = [...new Set(p.publications.map(item => item.group))];
   document.getElementById("publication-list").innerHTML = groups.map(group => `
     <div class="publication-group"><h3 class="publication-group-title">${esc(group)}</h3>
     ${p.publications.filter(item => item.group === group).map(item => {
       const figure = `<img class="pub-image${item.imagePending ? " pending-figure" : ""}" src="${esc(item.image)}" alt="${esc(item.imageAlt)}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async">`;
       const links = [["Paper",item.paper],["Code",item.code],["Project",item.project]].filter(([,url]) => safeUrl(url));
-      const venueBadge = item.status === "Under Review" ? "Under Review" : item.venue.startsWith("Pattern Recognition Letters") ? "PRL 2026" : item.venue.replace(" (Main Conference)", "");
+      const venueBadge = item.badge || (item.status === "Under Review" ? "Under Review" : item.venue.startsWith("Pattern Recognition Letters") ? "PRL 2026" : item.venue.replace(" (Main Conference)", ""));
       return `<article class="publication" id="${esc(item.slug)}">
         <div class="publication-visual"><div class="figure-frame"><span class="venue-badge">${esc(venueBadge)}</span>${figure}</div></div>
         <div class="publication-content"><h4 class="pub-title">${external(item.paper || item.project,item.title)}</h4><p class="authors">${authors(item.authors,item.correspondingAuthors)}</p>
