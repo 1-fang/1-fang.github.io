@@ -17,7 +17,14 @@ window.PROFILE = {
       },
       "."
     ],
-    "My research explores how large language models can support learning and decision-making in complex environments. I began with LLM-based code generation, where I developed hands-on experience in reinforcement learning and model training. I subsequently extended this interest to operational decision-making, studying language-guided, hierarchical reinforcement learning for ride-hailing dispatching and repositioning.",
+    [
+      "My current research focuses on ",
+      {
+        "text": "assortment optimization",
+        "url": "#assortment-optimization"
+      },
+      ": using large language models to construct decision features and training rewards for reinforcement learning under customer choice and resource constraints. This builds on my work in LLM-based code generation and language-guided reinforcement learning for operational decision-making."
+    ],
     "I am particularly interested in the intersection of large language models, reinforcement learning, and information systems: how semantic knowledge and high-level objectives can be translated into adaptive, executable policies for real-world decision problems."
   ],
   "announcement": "I am preparing to apply for PhD programs in Information Systems.",
@@ -273,5 +280,27 @@ window.PROFILE = {
     "LLM-Guided Decision-Making and Optimization",
     "Reinforcement Learning",
     "AI for Information Systems and Operations"
-  ]
+  ],
+  "featuredResearch": {
+    "slug": "assortment-optimization",
+    "title": "Assortment Optimization",
+    "authors": [
+      "Youhua Li",
+      "Xinyu Fang",
+      "Yiqi Sun",
+      "Pengfei Guo",
+      "Zuojun (Max) Shen",
+      "Houmin Yan"
+    ],
+    "type": "Working Paper",
+    "status": "Research complete · Preparing for submission to a UTD-listed journal",
+    "story": [
+      "How should firms choose assortments over time when customer preferences, substitution between items, and limited resources interact? We study how LLM-generated programs can translate this decision knowledge into features and training rewards for a sequential assortment policy.",
+      "Offline, an LLM proposes a Global State Builder and a Local Reward Reshaper. Candidate programs are checked for executability, numerical validity, feasibility, and validation revenue before reinforcement learning. Online, the selected feature builder and trained policy make sequential decisions under business constraints; the reward reshaper is used only during training."
+    ],
+    "image": "assets/publications/assortment-method.webp",
+    "imageWidth": 3000,
+    "imageHeight": 1590,
+    "imageAlt": "Assortment optimization framework: offline LLM program synthesis and verification, reinforcement learning with a Global State Builder and Local Reward Reshaper, and online constrained sequential decisions."
+  }
 };
