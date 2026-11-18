@@ -41,3 +41,5 @@ assets/style.css  桌面及手机样式
 assets/*.svg      原创占位图
 .nojekyll         让 GitHub Pages 直接提供静态文件
 ```
+
+2026-11-18：增加 IVR navigation 论文，位于 Manuscripts Under Review 第一篇；使用本人提供的作者顺序、2027 / Reinforcement Learning 信息及 PDF 第 3 页 Figure 2 方法图，仅公开图片，不上传私有论文全文。

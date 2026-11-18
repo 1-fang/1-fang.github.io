@@ -214,6 +214,30 @@ window.PROFILE = {
       "project": "https://physicsmind-web.github.io/"
     },
     {
+      "slug": "full-call-ivr-navigation",
+      "title": "From One Goal to Full-Call Success: Agent Reinforcement Learning with Reusable Experience for Autonomous IVR Navigation",
+      "authors": [
+        "Zhe Fu",
+        "Guoqing Song",
+        "Frank Youhua Chen",
+        "Xinyu Fang",
+        "Youhua Li",
+        "Mengzhuo Guo"
+      ],
+      "venue": "2027 · Reinforcement Learning",
+      "status": "Under Review",
+      "group": "Manuscripts Under Review",
+      "description": "",
+      "image": "assets/publications/ivr-method.webp",
+      "imageWidth": 2800,
+      "imageHeight": 1083,
+      "imagePending": false,
+      "imageAlt": "Figure 2: Complete-call Agent RL workflow for autonomous IVR navigation, including rollout collection, LLM policy training, and deployment with reusable trajectories.",
+      "paper": "",
+      "code": "",
+      "project": ""
+    },
+    {
       "slug": "gift-financial-rl",
       "title": "GIFT: LLM-Guided State-Reward Interface for Financial Reinforcement Learning",
       "authors": [
